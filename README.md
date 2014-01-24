@@ -22,7 +22,7 @@ Currently Radiant requires the development version of Shiny. On Windows you will
 To install the development version of Shiny follow the steps below:
 
 	options(repos = c(CRAN = "http://cran.rstudio.com"))
-	install.packages('devtools', repos = "http://cran.rstudio.com")
+	install.packages('devtools')
 	require(devtools)
 	install_github('shiny','rstudio')
 	require(shiny)
