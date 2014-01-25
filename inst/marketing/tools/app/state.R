@@ -2,22 +2,21 @@
 # functions to set initial values and take information from state_list
 # when available
 ################################################################################
-state_singlevar <- function(inputvar, vars) names(vars[vars == state_list[[inputvar]]])
-state_multvar <- function(inputvar, vars) names(vars[vars %in% state_list[[inputvar]]])
+
+state_singlevar <- function(inputvar, vars) vars[vars == state_list[[inputvar]]]
+state_multvar <- function(inputvar, vars) vars[vars %in% state_list[[inputvar]]]
 
 state_init <- function(inputvar, init = "") {
   ifelse(is.null(state_list[[inputvar]]), return(init), return(state_list[[inputvar]]))
 }
 
 state_init_list <- function(inputvar, init = "", vals) {
-  # return the list label/name, not the value because the input list contains the value, not the labels
   ifelse(is.null(state_list[[inputvar]]), return(init), return(state_singlevar(inputvar, vals)))
 }
 
 state_init_multvar <- function(inputvar, pre_inputvar, vals) {
-  # for factor and cluster use variable selection from the pre-analysis return the list label/name, 
-  # not the value because the input list contains the value, not the labels
-  ifelse(is.null(state_list[[inputvar]]), return(names(vals[vals %in% pre_inputvar])),
+  # for factor and cluster use variable selection from the pre-analysis 
+  ifelse(is.null(state_list[[inputvar]]), return(vals[vals %in% pre_inputvar]),
     return(state_multvar(inputvar, vals)))
 }
 

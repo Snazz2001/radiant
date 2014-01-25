@@ -77,9 +77,9 @@ output$ui_Transform <- renderUI({
 	# Inspired by Ian Fellow's transform ui in JGR/Deducer
   list(wellPanel(
     uiOutput("uiTr_columns"),
-    selectInput("tr_changeType", "Transformation type:", trans_types, selected = "None"),
+    selectInput("tr_changeType", "Transformation type:", trans_types, selected = ""),
     conditionalPanel(condition = "input.tr_changeType == 'type'",
-	    selectInput("tr_typefunction", "Change variable type:", type_options)
+	    selectInput("tr_typefunction", "Change variable type:", type_options, selected = "")
     ),
     conditionalPanel(condition = "input.tr_changeType == 'change'",
 	    selectInput("tr_transfunction", "Apply function:", trans_options)

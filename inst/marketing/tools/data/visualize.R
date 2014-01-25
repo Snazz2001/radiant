@@ -47,7 +47,7 @@ viz_multiple <- c("Single" = "single", "Multiple" = "multiple")
 
 output$ui_Visualize <- renderUI({
 	list(wellPanel(
-      radioButtons("viz_multiple", "Number of plots:", viz_multiple, state_init_list("viz_multiple","Single", viz_multiple)),
+      radioButtons("viz_multiple", "Number of plots:", viz_multiple, state_init_list("viz_multiple","single", viz_multiple)),
 			uiOutput("uiVizvars1"),
 			uiOutput("uiVizvars2"),
 			conditionalPanel(condition = "input.viz_multiple == 'single'",
