@@ -24,7 +24,8 @@ To install the development version of Shiny follow the steps below:
 	options(repos = c(CRAN = "http://cran.rstudio.com"))
 	install.packages('devtools')
 	require(devtools)
-	install_github('shiny','rstudio')
+	<!-- install_github('shiny','rstudio') -->
+	install_github('shiny', 'wch', ref='hidden-state')
 	require(shiny)
 
 To install and run the Marketing analytics app in Radiant:
