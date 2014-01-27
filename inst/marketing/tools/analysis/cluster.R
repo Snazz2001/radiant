@@ -24,12 +24,12 @@ output$ui_hierCluster <- renderUI({
   	wellPanel(
 	    uiOutput("uiHc_vars"), 
 	    selectInput("hc_dist", label = "Distance measure:", choices = hc_dist_method, 
-	     	selected = state_init_list("hc_dist","Squared euclidean", hc_dist_method), multiple = FALSE),
+	     	selected = state_init_list("hc_dist","sq.euclidean", hc_dist_method), multiple = FALSE),
 	    selectInput("hc_meth", label = "Method:", choices = hc_method, 
-	     	selected = state_init_list("hc_meth","Ward's", hc_method), multiple = FALSE),
+	     	selected = state_init_list("hc_meth","ward", hc_method), multiple = FALSE),
 	    conditionalPanel(condition = "input.tabs_hierCluster == 'Plots'",
 		    radioButtons(inputId = "hc_plots", label = "", hc_plots, 
-	 	    	selected = state_init_list("hc_plots","Dendrogram", hc_plots)),
+	 	    	selected = state_init_list("hc_plots","dendo", hc_plots)),
 	    	numericInput("hc_cutoff", "Plot cutoff:", min = 0, max = 1, 
 	    		value = state_init('hc_cutoff',0), step = .05))
   	),
@@ -152,9 +152,9 @@ output$ui_kmeansCluster <- renderUI({
 	  	conditionalPanel(condition = "input.km_hcinit == true",
 	  		wellPanel(
 		  		selectInput("km_dist", label = "Distance measure:", choices = hc_dist_method, 
-			     	selected = state_init_list("km_dist","Squared euclidean", hc_dist_method), multiple = FALSE),
+			     	selected = state_init_list("km_dist","sq.euclidian", hc_dist_method), multiple = FALSE),
 	  			selectInput("km_meth", label = "Method:", choices = hc_method, 
-			     	selected = state_init_list("km_meth","Ward's", hc_method), multiple = FALSE)
+			     	selected = state_init_list("km_meth","ward", hc_method), multiple = FALSE)
 	  		)
 	  	),
 	  	conditionalPanel(condition = "input.km_hcinit == false", 

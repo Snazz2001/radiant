@@ -10,7 +10,7 @@ output$ui_correlation <- renderUI({
 		  selectInput(inputId = "cor_var", label = "Select variables:", choices = varnames(), 
   	  	selected = state_multvar("cor_var",varnames()), multiple = TRUE),
 		  selectInput(inputId = "cor_type", label = "Method", choices = cor_type, 
-  	  	selected = state_init_list("cor_type","Pearson", cor_type), multiple = FALSE),
+  	  	selected = state_init_list("cor_type","pearson", cor_type), multiple = FALSE),
      	numericInput("cor_cutoff", label = "Correlation cutoff:", min = 0, max = 1, 
     		value = state_init('cor_cutoff',0), step = 0.05)
 	  ),
@@ -166,7 +166,7 @@ output$ui_regression <- renderUI({
 		  	checkboxInput(inputId = "reg_standardize", label = "Standardized coefficients", 
 	    		value = state_init('reg_standardize',FALSE)),
 		    radioButtons(inputId = "reg_interactions", label = "Interactions:", reg_interactions, 
-	  	  	selected = state_init_list("reg_interactions","None", reg_interactions)),
+	  	  	selected = state_init_list("reg_interactions","none", reg_interactions)),
 		    conditionalPanel(condition = "input.reg_interactions != 'none'",
 		  		uiOutput("uiReg_intsel")
 		  	),

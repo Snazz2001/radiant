@@ -179,7 +179,7 @@ output$ui_conjoint <- renderUI({
 		    checkboxInput(inputId = "ca_scale_plot", label = "Scale PW plots", 
 			  	value = state_init('ca_scale_plot',FALSE)),
 	      selectInput("ca_plots", "Conjoint plots:", choices = ca_plots, 
-	  	  	selected = state_init_list("ca_plots","Part-worths", ca_plots)))
+	  	  	selected = state_init_list("ca_plots","pw", ca_plots)))
 	  ),
 		helpAndReport('Conjoint analysis','conjoint',inclMD("tools/help/conjoint.md"))
 	)

@@ -27,7 +27,7 @@ output$ui_random <- renderUI({
   	wellPanel(
 	 	 	uiOutput("uiRnd_var"),
 		  radioButtons(inputId = "rnd_sample", label = "", rnd_sample, 
-	  	  selected = state_init_list("rnd_sample","Sample", rnd_sample)),
+	  	  selected = state_init_list("rnd_sample","sample", rnd_sample)),
 		  conditionalPanel(condition = "input.rnd_sample == 'sample'",
 		  	numericInput("rnd_sample_size", "Sample size:", min = 1, 
 		  		value = state_init("rnd_sample_size",1))
@@ -150,7 +150,7 @@ output$ui_sampleSize <- renderUI({
   list(
   	wellPanel(
 		  radioButtons(inputId = "rnd_mean", label = "", rnd_mean, 
-	  	  selected = state_init_list("rnd_mean","Mean", rnd_mean)),
+	  	  selected = state_init_list("rnd_mean","mean", rnd_mean)),
 		  conditionalPanel(condition = "input.rnd_mean == 'mean'",
 		    numericInput("rnd_mean_err", "Acceptable Error (units, e.g., $10):", min = 0, 
 		  		value = state_init("rnd_mean_err",.2), step = .1),
@@ -170,7 +170,7 @@ output$ui_sampleSize <- renderUI({
 	    numericInput("rnd_response", "Response rate:", min = 0, max = 1,
 	  		value = state_init("rnd_response",1), step = .05),
 		  radioButtons(inputId = "rnd_pop_correction", label = "Correct for population size:", 
-		  	rnd_pop_correction, selected = state_init_list("rnd_pop_correction","No", rnd_pop_correction)),
+		  	rnd_pop_correction, selected = state_init_list("rnd_pop_correction","no", rnd_pop_correction)),
 		  conditionalPanel(condition = "input.rnd_pop_correction == 'yes'",
 		    numericInput("rnd_pop_size", "Population size:", min = 1, 
 		  		value = state_init("rnd_pop_size",10^6), step = 1000))

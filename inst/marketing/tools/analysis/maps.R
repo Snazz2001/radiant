@@ -52,7 +52,7 @@ output$ui_mds <- renderUI({
 	  	uiOutput("uiMds_dis"),
 		  radioButtons(inputId = "mds_dim_number", label = "", mds_dim_number, 
 		  	# selected = values$mds_dim_number),
-		   	selected = state_init_list("mds_dim_number","2-dims", mds_dim_number)),
+		   	selected = state_init_list("mds_dim_number",2, mds_dim_number)),
 	 	 	conditionalPanel(condition = "input.tabs_mds == 'Plots'",
 	 	 		numericInput("mds_fontsz", "Font size:", state_init("mds_fontsz",1.3), .5, 4, .1),
 		  	uiOutput("uiMds_rev_dim")

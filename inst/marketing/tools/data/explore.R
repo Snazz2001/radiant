@@ -31,7 +31,7 @@ output$uiExpl_function <- renderUI({
   if(is.null(input$expl_byvar)) return()
   selectInput(inputId = "expl_function", label = "Apply function(s):", choices = expl_functions, 
   	# selected = state_multvar("expl_byvar",vars), multiple = TRUE)
-  	selected = state_init_list("expl_function","Mean", expl_functions), multiple = TRUE)
+  	selected = state_init_list("expl_function","mean", expl_functions), multiple = TRUE)
 })
 
 output$uiExpl_show_viz <- renderUI({

@@ -123,7 +123,7 @@ output$ui_fullFactor <- renderUI({
     wellPanel(
       uiOutput("uiFactor_vars"), 
       selectInput("fac_method", label = "Method:", choices = fac_method, 
-      	selected = state_init_list("fac_method","Principal components", fac_method)),
+      	selected = state_init_list("fac_method","PCA", fac_method)),
       numericInput("fac_number", label = "Number of factors:", min = 1, 
       	value = state_init('fac_number',1)),
       conditionalPanel(condition = "input.tabs_fullFactor != 'Plots'",
@@ -136,7 +136,7 @@ output$ui_fullFactor <- renderUI({
   	    )
   	  ),
       radioButtons("fac_rotation", label = "Rotation:", fac_rotation, 
-      	selected = state_init_list("fac_rotation","Varimax", fac_rotation)),
+      	selected = state_init_list("fac_rotation","varimax", fac_rotation)),
       actionButton("fac_savescores", "Save scores")
   	),
 		helpAndReport('Factor analysis','fullFactor',inclMD("tools/help/fullFactor.md"))

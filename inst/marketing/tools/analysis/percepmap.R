@@ -57,7 +57,7 @@ output$ui_pmap <- renderUI({
 		    )
 	    ),
 		  radioButtons(inputId = "pmap_dim_number", label = "", pmap_dim_number, 
-		   	selected = state_init_list("pmap_dim_number","2-dims", pmap_dim_number)),
+		   	selected = state_init_list("pmap_dim_number",2, pmap_dim_number)),
 	 	 	conditionalPanel(condition = "input.tabs_pmap == 'Summary'",
 	    	numericInput("pmap_cutoff", label = "Loadings cutoff:", min = 0, max = 1, 
 	    		state_init("pmap_cutoff",0), step = .05),

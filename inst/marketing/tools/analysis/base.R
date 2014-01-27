@@ -17,7 +17,7 @@ output$ui_singleMean <- renderUI({
   	wellPanel(
  	   	uiOutput("uiSm_var"),
   	  selectInput(inputId = "sm_alternative", label = "Alternative hypothesis:", 
-  	  	choices = base_alt, selected = state_init_list("sm_alternative","Two sided", base_alt), multiple = FALSE),
+  	  	choices = base_alt, selected = state_init_list("sm_alternative","two.sided", base_alt), multiple = FALSE),
     	sliderInput('sm_sigLevel',"Significance level:", min = 0.85, max = 0.99, 
     		value = state_init('sm_sigLevel',.95), step = 0.01),
     	numericInput("sm_compValue", "Comparison value:", state_init('sm_compValue',0.0))
@@ -116,7 +116,7 @@ output$ui_compareMeans <- renderUI({
 	    uiOutput("uiCm_var2"),
 	    conditionalPanel(condition = "input.tabs_compareMeans == 'Summary'",
 	      selectInput(inputId = "cm_alternative", label = "Alternative hypothesis:", choices = base_alt, 
-	      	selected = state_init_list("cm_alternative","Two sided", base_alt))
+	      	selected = state_init_list("cm_alternative","two.sided", base_alt))
 	    ),
 	    conditionalPanel(condition = "input.tabs_compareMeans == 'Plots'",
 			  checkboxInput('cm_jitter', 'Jitter', value = state_init("cm_jitter",FALSE))

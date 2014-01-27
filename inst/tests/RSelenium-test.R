@@ -1,9 +1,6 @@
 # require(devtools)
 # install_github("RSelenium", "johndharrison")
 install_github('shiny','rstudio')
-remove.packages('shiny')
-install.packages('shiny')
-shiny::runGitHub("sortable","mostly-harmless")
 require(RSelenium)
 port = 8100
 host = "127.0.0.1"
@@ -12,15 +9,13 @@ host = "127.0.0.1"
 # make a list with values and output and save that for comparison
 # using testthat
 #####################################################################
-# system("R -e \"shiny::runApp('~/radiant/inst/marketing', launch.browser = TRUE, port = 8100)\"")
+# options(warn=2, error=recover)
 
-options(warn=2, error=recover)
-
-shiny::runApp('~/radiant/inst/marketing', launch.browser = TRUE, port = 8100)
-
+# shiny::runApp('~/radiant/inst/marketing', launch.browser = TRUE, port = 8100)
+# https://download.mozilla.org/?product=firefox-25.0&os=osx&lang=en-US
 startServer()
-# remDr <- remoteDriver$new()
-remDr <- remoteDriver$new(browserName = 'safari')
+remDr <- remoteDriver$new()
+# remDr <- remoteDriver$new(browserName = 'safari')
 Sys.sleep(15) # time for server
 remDr$open()
 Sys.sleep(5) # time for server
@@ -69,6 +64,8 @@ webElem$clickElement() # app should change to spearman
 webElem <- remDr$findElement(using = "id", value = "cor_cutoff")
 webElem$getElementAttribute("value") 	# [1] "0"
 webElem$sendKeysToElement(list(value = ".2"))
+
+Sys.sleep(5) # time for server
 
 # getting the output in summary_correlation
 webElem <- remDr$findElements(value = "//*[@id = 'summary_correlation']")
