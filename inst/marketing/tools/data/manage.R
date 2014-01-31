@@ -257,8 +257,7 @@ output$uiDatasets <- renderUI({
 
 output$htmlDataExample <- renderText({
 
-  if(isolate(input$datatabs) != 'Manage') return(invisible())
-
+  # if(isolate(input$datatabs) != 'Manage') return(invisible())
 
   dat <- getdata()
   if(is.null(dat)) return()

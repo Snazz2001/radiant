@@ -97,7 +97,7 @@ viz_plot_height <- reactive({
 
 output$visualize <- renderPlot({
 
-	if(isolate(input$datatabs) != 'Visualize') return(invisible())
+	# if(isolate(input$datatabs) != 'Visualize') return(invisible())
 
  	if(is.null(input$viz_facet_col)) return()
 	# if(input$vizvars1 == "")

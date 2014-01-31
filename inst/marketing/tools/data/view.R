@@ -19,9 +19,9 @@ output$ui_View <- renderUI({
 
 output$dataviewer <- renderDataTable({
 
-  if(isolate(input$datatabs) != 'View') return(invisible())
-
+  # if(isolate(input$datatabs) != 'View') return(invisible())
   # if(is.null(input$datasets) || is.null(input$view_vars)) return()
+  
   if(is.null(input$view_vars)) return()
   dat <- date2character()
 

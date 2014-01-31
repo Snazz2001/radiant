@@ -292,7 +292,7 @@ output$transform_data <- reactive({
 
 output$transform_summary <- renderPrint({
 
-	if(isolate(input$datatabs) != 'Transform') return(invisible())
+	# if(isolate(input$datatabs) != 'Transform') return(invisible())
 
 	dat <- transform_main()
 	if(is.null(dat)) return(invisible()) 			# ...
@@ -343,7 +343,7 @@ observe({
 		if(is.character(dat)) return(dat)
 
 		if(input$tr_changeType == 'remove') {
-	  	values[[input$datasets]][,colnames(dat)] <- NULL
+	  	values[[input$datasets]][,colnames(dat)] <- list(NULL)
 	  } else if(input$tr_changeType == 'type') {
 	  	values[[input$datasets]][,colnames(dat)] <- dat
 		} else if(input$tr_changeType == 'na.remove') {

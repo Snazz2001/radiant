@@ -176,7 +176,7 @@ expl_plot_height <- function() {
 
 output$expl_plots <- renderPlot({
 
-	if(isolate(input$datatabs) != 'Explore') return(invisible())
+	# if(isolate(input$datatabs) != 'Explore') return(invisible())
 
 	if(!input$expl_show_viz || is.null(input$expl_byvar)) return()
 	.plots_explore()

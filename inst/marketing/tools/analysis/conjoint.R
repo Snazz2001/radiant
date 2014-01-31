@@ -57,7 +57,7 @@ conjointProfiles <- function(ca_attr = values[['ca_attr']]) {
 	Profile <- 1:dim(ret$full)[1]
 	CFdesign <- cbind(Profile, ret$full)
 
-	return(list(attr = ca_attr, frac = FFdesign, full = CFdesign))
+	return(list(attr = ca_attr, pro.cor = pro.cor, frac = FFdesign, full = CFdesign))
 }
 
 summary_conjointProfiles <- function(result = .conjointProfiles()) {
@@ -68,8 +68,12 @@ summary_conjointProfiles <- function(result = .conjointProfiles()) {
 	cn <- c("Profile")
 	for(i in cnames) cn <- c(cn, i[1])
 
-	cat("Fraction factorial design:\n")
+	cat("Fractional factorial design:\n")
 	print(result$frac[,cn], row.names = FALSE)
+
+	cat("\nFactorial design correlations:\n")
+	print(result$pro.cor, row.names = FALSE)
+
 	cat("\nFull factorial design:\n")
 	print(result$full[,cn], row.names = FALSE)
 }
@@ -126,7 +130,7 @@ observe({
 	inFile <- input$uploadAttr
   if(!is.null(inFile)) {
     isolate({
-      values[['ca_attr']] <- readLines(inFile$datapath)
+      values[['ca_attr']] <- gsub("\"","\'",readLines(inFile$datapath))
     })
   }
 })
