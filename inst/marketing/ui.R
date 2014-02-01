@@ -45,5 +45,6 @@ shinyUI(navbarPage("Radiant", id = "nav_radiant", inverse = TRUE, collapsable = 
 
   tabPanel("State", uiOutput("state")),
 
+  # tabPanel("About", includeRmd("../base/tools/app/about.Rmd"))
   tabPanel("About", includeRmd("tools/app/about.Rmd"))
 ))

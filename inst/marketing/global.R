@@ -41,6 +41,7 @@ setInitValues <- function() {
     # Datasets can change over time (i.e. the changedata function). Therefore,
     # the data need to be a reactive value so the other reactive functions
     # and outputs that depend on these datasets will know when they are changed.
+    # robj <- load("../base/data/data_init/diamonds.rda") 
     robj <- load("data/data_init/diamonds.rda") 
     df <- get(robj)
     values[["diamonds"]] <- df
@@ -132,6 +133,8 @@ helpPopup <- function(title, content, placement=c('right', 'top', 'left', 'botto
 
 # adding the figures path to avoid making a copy of all figures in www/figures
 addResourcePath("figures", "tools/help/figures/")
+# addResourcePath("www", "../base/www/")
+# addResourcePath("tools", "../base/tools/")
 
 # binding to a bootstrap modal
 helpModal <- function(title, link, content) {
