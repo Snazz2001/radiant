@@ -27,8 +27,8 @@ hist(rnorm(100))
 # cat('_Markdown_,', 'oh yeah, **Markdown**')
 # ```
 
-# opts_chunk$set(echo=FALSE, comment=NA, cache=TRUE, message=FALSE, warning=FALSE,
-opts_chunk$set(echo=FALSE, comment=NA, message=FALSE, warning=FALSE,
+opts_chunk$set(echo=FALSE, comment=NA, cache=TRUE, message=FALSE, warning=FALSE,
+# opts_chunk$set(echo=FALSE, comment=NA, message=FALSE, warning=FALSE,
   fig.path = "www/rmd/figure/", cache.path = "www/rmd/cache/")
 opts_knit$set(progress = FALSE)
 

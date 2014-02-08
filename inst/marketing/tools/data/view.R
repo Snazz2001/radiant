@@ -23,7 +23,8 @@ output$dataviewer <- renderDataTable({
   # if(is.null(input$datasets) || is.null(input$view_vars)) return()
   
   if(is.null(input$view_vars)) return()
-  dat <- date2character()
+  # dat <- date2character()
+  dat <- getdata()
 
   if(!all(input$view_vars %in% colnames(dat))) return()
   if(input$view_select != "") {
