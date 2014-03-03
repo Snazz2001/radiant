@@ -15,12 +15,14 @@ output$data_ui_and_tabs <- renderUI({
     ),
 
     sidebarLayout(
+
       sidebarPanel(
         # based on https://groups.google.com/forum/?fromgroups=#!topic/shiny-discuss/PzlSAmAxxwo
         div(class = "busy",
           p("Calculation in progress ..."),
           img(src="ajaxloaderq.gif")
         ),
+        # div(id = "demo", class = "collapse in",
         wellPanel(
           uiOutput("uiDatasets")
         ),
@@ -53,7 +55,11 @@ output$data_ui_and_tabs <- renderUI({
 # data tabs
 output$tabs_data <- renderUI({
   tabsetPanel(id = "datatabs",
-    tabPanel("Manage", htmlOutput("htmlDataExample"), 
+    tabPanel("Manage", 
+      # HTML("<button type='button' class='btn btn-danger' data-toggle='collapse' data-target='#demo'>
+      #       simple collapsible</button>"),
+      htmlOutput("htmlDataExample"), 
+
       HTML('<label>10 (max) rows shown. See View-tab for details.</label>'),
       conditionalPanel(condition = "input.man_add_descr == false",
         HTML(dataDescriptionOutput('html'))

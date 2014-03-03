@@ -17,6 +17,10 @@ label.checkbox  {
   float: none; 
 }
 
+.recalculating { 
+  opacity: 1.0; 
+}
+
 select { 
   max-width: 200px; 
 }
@@ -55,8 +59,13 @@ input[type="number"] {
 }
 
 .span4 { 
+  /*width: 280px; */
   max-width: 280px; 
 }
+
+/*.span8 {
+  max-width: 1000px; 
+}*/
 
 .popover { 
   width: 600px; 
