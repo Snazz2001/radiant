@@ -33,14 +33,15 @@ output$tool <- renderUI({
 	tool()
 })
 
-tool <- function(datasets, ..., rmd = "") {
+tool <- function(datasets, ...) {
 	# function for main analysis
 
   ...
 
   result <- list()
-  if(rmd == "Summary") return(summary_tool(result))
-  if(rmd == "Plots") return(plots_tool(result))
+
+  ... 
+
   return(result)
 }
 })
@@ -53,4 +54,4 @@ summary_tool <- function(result = .tool()) {
 # Generate output for the plots tab
 plots_tool <- function(result = .tool()) {
 
-})
+}
