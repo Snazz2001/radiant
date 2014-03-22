@@ -7,7 +7,7 @@ output$uiPreFactor_vars <- renderUI({
  	vars <- varnames()[isNum]
   if(length(vars) == 0) return()
   selectInput(inputId = "preFactor_vars", label = "Variables:", choices = vars, 
-  	selected = state_multvar("preFactor_vars",vars), multiple = TRUE)
+  	selected = state_multvar("preFactor_vars",vars), multiple = TRUE, selectize = FALSE)
 })
 
 output$ui_preFactor <- renderUI({
@@ -111,7 +111,7 @@ output$uiFactor_vars <- renderUI({
  	vars <- varnames()[isNum]
   if(length(vars) == 0) return()
   selectInput(inputId = "factor_vars", label = "Variables:", choices = vars, 
-  	selected = state_init_multvar("factor_vars",input$preFactor_vars, vars), multiple = TRUE)
+  	selected = state_init_multvar("factor_vars",input$preFactor_vars, vars), multiple = TRUE, selectize = FALSE)
 })
 
 fac_method <- c('Principal components' = 'PCA', 'Maximum Likelihood' = "maxlik")

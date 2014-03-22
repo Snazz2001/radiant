@@ -90,7 +90,7 @@ dataDescriptionOutput <- function(ret = 'html') {
 output$uiRemoveDataset <- renderUI({
   # Drop-down selection of data set to remove
   selectInput(inputId = "removeDataset", label = "Remove data from memory:", 
-    choices = values$datasetlist, selected = NULL, multiple = TRUE)
+    choices = values$datasetlist, selected = NULL, multiple = TRUE, selectize = FALSE)
 })
 
 observe({
@@ -252,7 +252,7 @@ loadUserData <- function(filename, uFile, ext) {
 output$uiDatasets <- renderUI({
   # Drop-down selection of data set
   selectInput(inputId = "datasets", label = "Datasets:", choices = values$datasetlist, 
-    selected = state_init("datasets"), multiple = FALSE)
+    selected = state_init("datasets"), multiple = FALSE, selectize = FALSE)
 })
 
 output$htmlDataExample <- renderText({

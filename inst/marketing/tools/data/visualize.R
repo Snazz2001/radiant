@@ -8,7 +8,7 @@ output$uiVizvars1 <- renderUI({
 	vars <- varnames()
 	if(input$viz_multiple == 'single') vars <- c("None" = "", vars)
 	selectInput(inputId = "vizvars1", label = "X-variable", choices = vars, 
-  	selected = state_multvar("vizvars1",vars), multiple = input$viz_multiple == 'multiple')
+  	selected = state_multvar("vizvars1",vars), multiple = input$viz_multiple == 'multiple', selectize = FALSE)
 })
 
 output$uiVizvars2 <- renderUI({

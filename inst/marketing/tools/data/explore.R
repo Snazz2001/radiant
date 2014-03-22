@@ -6,7 +6,7 @@ output$uiExpl_columns <- renderUI({
  	vars <- varnames()[isNum]
   if(length(vars) == 0) return()
 	selectInput("expl_columns", "Select column(s):", choices  = as.list(vars), 
-  	selected = state_multvar("expl_columns",vars), multiple = TRUE)
+  	selected = state_multvar("expl_columns",vars), multiple = TRUE, selectize = FALSE)
 })
 
 output$uiExpl_byvar <- renderUI({
@@ -14,7 +14,7 @@ output$uiExpl_byvar <- renderUI({
  	vars <- varnames()[isFct]
   if(length(vars) == 0) return()
   selectInput(inputId = "expl_byvar", label = "Group by:", choices = vars, 
-  	selected = state_multvar("expl_byvar",vars), multiple = TRUE)
+  	selected = state_multvar("expl_byvar",vars), multiple = TRUE, selectize = FALSE)
 })
 
 # needs to be in global env for plyr to find it
@@ -30,8 +30,7 @@ expl_functions <- list("Mean" = "mean", "Std. dev" = "sd", "N" = "length", "# mi
 output$uiExpl_function <- renderUI({
   if(is.null(input$expl_byvar)) return()
   selectInput(inputId = "expl_function", label = "Apply function(s):", choices = expl_functions, 
-  	# selected = state_multvar("expl_byvar",vars), multiple = TRUE)
-  	selected = state_init_list("expl_function","mean", expl_functions), multiple = TRUE)
+  	selected = state_init_list("expl_function","mean", expl_functions), multiple = TRUE, selectize = FALSE)
 })
 
 output$uiExpl_show_viz <- renderUI({

@@ -1,7 +1,7 @@
 # UI-elements for transform
 output$uiTr_columns <- renderUI({
 	cols <- varnames()
-	selectInput("tr_columns", "Select column(s):", choices  = as.list(cols), selected = NULL, multiple = TRUE)
+	selectInput("tr_columns", "Select column(s):", choices  = as.list(cols), selected = NULL, multiple = TRUE, selectize = FALSE)
 })
 
 output$uiTr_reorder_levs <- renderUI({

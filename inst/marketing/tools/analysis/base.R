@@ -101,7 +101,7 @@ output$uiCm_var2 <- renderUI({
 	 	vars <- vars[-which(vars == input$cm_var1)]
 	  if(length(vars) == 0) return()
 	  selectInput(inputId = "cm_var2", label = "Variables (select one or more):", choices = vars, 
-	  	selected = state_multvar("cm_var2",vars), multiple = TRUE)
+	  	selected = state_multvar("cm_var2",vars), multiple = TRUE, selectize = FALSE)
 	} else {
  		# when cm_var1 is not numeric then comparisons are across levels/groups
 	  selectInput(inputId = "cm_var2", label = "Variables (select one):", choices = vars, 

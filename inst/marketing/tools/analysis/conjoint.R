@@ -162,7 +162,7 @@ output$uiCa_var2 <- renderUI({
  	vars <- varnames()[isFct]
   if(length(vars) == 0) return()
   selectInput(inputId = "ca_var2", label = "Attributes:", choices = vars, 
-  	selected = state_multvar("ca_var2", vars), multiple = TRUE)
+  	selected = state_multvar("ca_var2", vars), multiple = TRUE, selectize = FALSE)
 })
 
 ca_plots <- list("Part-worths" = "pw", "Importance-weights" = "iw")

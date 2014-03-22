@@ -8,7 +8,7 @@ output$ui_correlation <- renderUI({
   	wellPanel(
 	    uiOutput("uiCor_var"),
 		  selectInput(inputId = "cor_var", label = "Select variables:", choices = varnames(), 
-  	  	selected = state_multvar("cor_var",varnames()), multiple = TRUE),
+  	  	selected = state_multvar("cor_var",varnames()), multiple = TRUE, selectize = FALSE),
 		  selectInput(inputId = "cor_type", label = "Method", choices = cor_type, 
   	  	selected = state_init_list("cor_type","pearson", cor_type), multiple = FALSE),
      	numericInput("cor_cutoff", label = "Correlation cutoff:", min = 0, max = 1, 
@@ -126,7 +126,7 @@ output$uiReg_var2 <- renderUI({
  	vars <- vars[-which(vars == input$reg_var1)]
   if(length(vars) == 0) return()
   selectInput(inputId = "reg_var2", label = "Independent variables:", choices = vars, 
-  	selected = state_multvar("reg_var2", vars), multiple = TRUE)
+  	selected = state_multvar("reg_var2", vars), multiple = TRUE, selectize = FALSE)
 })
 
 output$uiReg_var3 <- renderUI({
@@ -138,7 +138,7 @@ output$uiReg_var3 <- renderUI({
 	if(!is.null(input$reg_intsel) && input$reg_interactions != 'none') vars <- c(vars,input$reg_intsel)
 
   selectInput(inputId = "reg_var3", label = "Variables to test:", choices = vars, 
-  	selected = state_multvar("reg_var3", vars), multiple = TRUE)
+  	selected = state_multvar("reg_var3", vars), multiple = TRUE, selectize = FALSE)
 })
 
 output$uiReg_intsel <- renderUI({
@@ -151,7 +151,7 @@ output$uiReg_intsel <- renderUI({
  	choices <- reg_int_vec(vars,input$reg_interactions)
 
 	selectInput("reg_intsel", label = "", choices = choices, 
-  	selected = state_multvar("reg_intsel", vars), multiple = TRUE)
+  	selected = state_multvar("reg_intsel", vars), multiple = TRUE, selectize = FALSE)
 })
 
 reg_interactions <- c("None" = "none", "All 2-way" = "2way", "All 3-way" = "3way")

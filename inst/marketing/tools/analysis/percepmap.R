@@ -18,7 +18,7 @@ output$uiPmap_attr <- renderUI({
  	vars <- varnames()[isNum]
   if(length(vars) == 0) return()
   selectInput(inputId = "pmap_attr", label = "Attributes:", choices = vars, 
-   	selected = state_multvar("pmap_attr",vars), multiple = TRUE)
+   	selected = state_multvar("pmap_attr",vars), multiple = TRUE, selectize = FALSE)
 })
 
 output$uiPmap_pref <- renderUI({
@@ -31,7 +31,7 @@ output$uiPmap_pref <- renderUI({
   if(length(vars) == 0) return()
 
   selectInput(inputId = "pmap_pref", label = "Preferences:", choices = vars, 
-   	selected = state_multvar("pmap_pref",vars), multiple = TRUE)
+   	selected = state_multvar("pmap_pref",vars), multiple = TRUE, selectize = FALSE)
 })
 
 output$uiPmap_plot <- renderUI({

@@ -8,7 +8,7 @@ output$uiHc_vars <- renderUI({
   if(length(vars) == 0) return()
 
   selectInput(inputId = "hc_vars", label = "Variables:", choices = vars, 
-   	selected = state_multvar("hc_vars",vars), multiple = TRUE)
+   	selected = state_multvar("hc_vars",vars), multiple = TRUE, selectize = FALSE)
 })
 
 hc_method <- list("Ward's" = "ward", "Single" = "single", "Complete" = "complete", "Average" = "average", 
@@ -140,7 +140,7 @@ output$uiKm_vars <- renderUI({
   if(length(vars) == 0) return()
 
   selectInput(inputId = "km_vars", label = "Variables:", choices = vars, 
-	  selected = state_init_multvar("km_vars",input$hc_vars, vars), multiple = TRUE)
+	  selected = state_init_multvar("km_vars",input$hc_vars, vars), multiple = TRUE, selectize = FALSE)
 })
   
 output$ui_kmeansCluster <- renderUI({
