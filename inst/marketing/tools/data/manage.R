@@ -252,7 +252,7 @@ loadUserData <- function(filename, uFile, ext) {
 output$uiDatasets <- renderUI({
   # Drop-down selection of data set
   selectInput(inputId = "datasets", label = "Datasets:", choices = values$datasetlist, 
-    selected = state_init("datasets"), multiple = FALSE, selectize = FALSE)
+    selected = state_init("datasets"), multiple = FALSE)
 })
 
 output$htmlDataExample <- renderText({

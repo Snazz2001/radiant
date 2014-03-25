@@ -5,11 +5,9 @@
 output$data_ui_and_tabs <- renderUI({
   list(
     includeCSS("www/style.css"),
-    # includeMathJax("www/js/MathJax.js"),
     tags$head(
       tags$script(src = "js/jquery-ui.custom.min.js"),
       tags$script(src = "js/busy.js"),
-      # tags$script(src = "js/MathJax.js?config=TeX-AMS-MML_HTMLorMML") 
       tags$script(src = 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
         type = 'text/javascript')
     ),
@@ -18,11 +16,6 @@ output$data_ui_and_tabs <- renderUI({
 
       sidebarPanel(
         # based on https://groups.google.com/forum/?fromgroups=#!topic/shiny-discuss/PzlSAmAxxwo
-        div(class = "busy",
-          p("Calculation in progress ..."),
-          img(src="ajaxloaderq.gif")
-        ),
-        # div(id = "demo", class = "collapse in",
         wellPanel(
           uiOutput("uiDatasets")
         ),
@@ -46,6 +39,10 @@ output$data_ui_and_tabs <- renderUI({
         )
       ),
       mainPanel(id = "datatabs",
+        div(class = "busy",
+          p("Calculation in progress ..."),
+          img(src="ajaxloaderq.gif")
+        ),
         uiOutput("tabs_data")
       )
     )

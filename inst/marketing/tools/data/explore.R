@@ -65,7 +65,7 @@ observe({
 
 .explore <- reactive({
 	if(is.null(input$expl_columns)) return()
-	# if(is.null(inChecker(input$expl_columns))) return()
+	if(is.null(inChecker(input$expl_columns))) return()
 	explore(input$datasets, input$expl_columns, input$expl_byvar, input$expl_function, input$expl_select)
 })
 
@@ -135,7 +135,7 @@ summary_explore <- function(result = .explore()) {
 
 output$expl_summary <- renderPrint({
 
-	if(isolate(input$datatabs) != 'Explore') return(invisible())
+	# if(isolate(input$datatabs) != 'Explore') return(invisible())
 
 	if(!is.null(input$expl_show_tab) && !input$expl_show_tab) return(invisible())
 	.summary_explore()

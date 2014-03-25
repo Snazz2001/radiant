@@ -25,6 +25,10 @@ select {
   max-width: 200px; 
 }
 
+.selectize-input { 
+  max-width: 200px; 
+}
+
 pre {
   overflow: auto;
   word-wrap: normal;
