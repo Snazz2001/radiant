@@ -58,8 +58,8 @@ options(repos = c(CRAN = "http://cran.rstudio.com"))
 # libs <- c("shiny", "knitr", "shinyAce", "car", "tools", "gridExtra", "markdown", "R.utils", "psych", 
 #   "arm", "plyr", "reshape2", "vegan", "ggplot2", "lubridate", "wordcloud", "AlgDesign")
 
-libs <- c("shiny", "knitr", "markdown", "shinyAce", "car", "MASS", "gridExtra", "psych", 
-  "plyr", "reshape2", "vegan", "lubridate", "wordcloud", "AlgDesign", "ggplot2")
+libs <- c("shiny", "knitr", "R.utils", "markdown", "shinyAce", "car", "MASS", "gridExtra", "psych", 
+  "plyr", "dplyr","reshape2", "vegan", "lubridate", "wordcloud", "AlgDesign", "ggplot2")
 
 # would prefer to use importFrom but ...
 # detach("package:R.utils", unload=TRUE)

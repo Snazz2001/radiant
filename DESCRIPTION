@@ -1,24 +1,25 @@
 Package: radiant
 Title: Business analytics using R and Shiny
 Type: Shiny-app
-Version: 0.50
-Date: 2014-1-16
-Author: Vincent Nijs <vnijs@rady.ucsd.edu> with kind support from Joe Cheng and Winston Chang (Rstudio)
+Version: 0.502
+Date: 2014-3-25
+Author: Vincent Nijs <vnijs@rady.ucsd.edu> 
 Maintainer: Vincent Nijs <vnijs@rady.ucsd.edu>
 Description: Business analytics using R and Shiny
-License: AGPLv3 and CC-NC
+License: AGPLv3 (code) and CC-NC-SA (documentation)
 Depends: 
-	R (>= 3.0.2)
-Imports: 
-	shiny,
+	R (>= 3.0.2),
+	shiny (>= 0.9.1),
 	knitr,
 	R.utils,
 	markdown,
 	shinyAce,
 	car, 
+	MASS,
 	gridExtra,
 	psych,
 	plyr,
+	dplyr,
 	reshape2,
 	vegan,
 	lubridate,
