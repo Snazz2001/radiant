@@ -1,8 +1,11 @@
 # Specify list of packages needed
-pkgs_cran <- c("mime","BH","GPArotation","R.methodsS3", "R.oo", "R.utils", "car",
+pkgs <- c("mime","BH","GPArotation","R.methodsS3", "R.oo", "R.utils", "car",
 	"gridExtra", "psych", "vegan", "lubridate", "RColorBrewer",
-	"wordcloud", "AlgDesign", "markdown", "rmarkdown", "knitr", "plyr", "ggplot2")
+	"wordcloud", "AlgDesign", "markdown", "knitr", "plyr", "tidyr",
+	"dplyr", "ggplot2", "shiny", "shinyAce")
 
-pkgs_gh <- c("shiny","shinyAce","rvest","tidyr","dplyr")
+# Add rvest when it gets to CRAN
+# https://github.com/hadley/rvest
 
-pkgs <- c(pkgs_cran,pkgs_gh)
+# Updating shiny to get the withProgress option
+# pkgs <- c("shiny")
